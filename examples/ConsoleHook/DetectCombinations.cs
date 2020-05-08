@@ -1,15 +1,18 @@
-﻿// This code is distributed under MIT license. 
+﻿// This code is distributed under MIT license.
 // Copyright (c) 2010-2018 George Mamaladze
 // See license.txt or https://mit-license.org/
 
+using Gma.System.MouseKeyHook;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
-using Gma.System.MouseKeyHook;
 
 namespace ConsoleHook
 {
+    /// <summary>
+    /// 组合键
+    /// </summary>
     internal class DetectCombinations
     {
         public static void Do(Action quit)
@@ -28,7 +31,10 @@ namespace ConsoleHook
 
             Console.WriteLine("Detecting following combinations:");
             foreach (var combination in map.Keys)
+            {
                 Console.WriteLine("\t{0}", combination);
+            }
+
             Console.WriteLine("Press ESC to exit.");
 
             //Actual loop

@@ -1,4 +1,4 @@
-﻿// This code is distributed under MIT license. 
+﻿// This code is distributed under MIT license.
 // Copyright (c) 2010-2018 George Mamaladze
 // See license.txt or https://mit-license.org/
 
@@ -28,7 +28,10 @@ namespace ConsoleHook
             {
                 Console.WriteLine("Please select one of these:");
                 foreach (var selectorKey in selector.Keys)
+                {
                     Console.WriteLine(selectorKey);
+                }
+
                 var ch = Console.ReadKey(true).KeyChar;
                 action = selector
                     .Where(p => p.Key.StartsWith(ch.ToString()))
@@ -40,7 +43,6 @@ namespace ConsoleHook
 
             Application.Run(new ApplicationContext());
         }
-
 
         private static void Exit(Action quit)
         {
